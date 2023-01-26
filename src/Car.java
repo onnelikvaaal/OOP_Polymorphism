@@ -1,9 +1,21 @@
 public class Car extends Transport implements Competitive {
 
+    private CarBody carBody;
+
     public Car(String brand,
                String model,
-               double engineVolume) {
+               double engineVolume,
+               CarBody carBody) {
         super(brand, model, engineVolume);
+        this.carBody = carBody;
+    }
+
+    public CarBody getCarBody() {
+        return carBody;
+    }
+
+    public void setCarBody(CarBody carBody) {
+        this.carBody = carBody;
     }
 
     @Override
@@ -29,5 +41,14 @@ public class Car extends Transport implements Competitive {
     @Override
     public void topSpeed() {
         System.out.println("Максимальная скорость: " + getEngineVolume() * 20 + "км/ч");
+    }
+
+    @Override
+    public void printType(){
+        if (carBody != null) {
+            System.out.println(carBody);
+        } else {
+            System.out.println("Данных по транспортному средству недостаточно!");
+        }
     }
 }

@@ -1,9 +1,21 @@
 public class Truck extends Transport implements Competitive {
 
+    private LoadCapacity loadCapacity;
+
     public Truck (String brand,
                   String model,
-                  double engineVolume) {
+                  double engineVolume,
+                  LoadCapacity loadCapacity) {
         super(brand, model, engineVolume);
+        this.loadCapacity = loadCapacity;
+    }
+
+    public LoadCapacity getLoadCapacity() {
+        return loadCapacity;
+    }
+
+    public void setLoadCapacity(LoadCapacity loadCapacity) {
+        this.loadCapacity = loadCapacity;
     }
 
     @Override
@@ -29,5 +41,14 @@ public class Truck extends Transport implements Competitive {
     @Override
     public void topSpeed() {
         System.out.println("Максимальная скорость: " + getEngineVolume() * 15 + "км/ч");
+    }
+
+    @Override
+    public void printType(){
+        if (loadCapacity != null) {
+            System.out.println(loadCapacity);
+        } else {
+            System.out.println("Данных по транспортному средству недостаточно!");
+        }
     }
 }

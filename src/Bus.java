@@ -1,9 +1,21 @@
 public class Bus extends Transport implements Competitive {
 
+    private PassengerCapacity passengerCapacity;
+
     public Bus (String brand,
                 String model,
-                double engineVolume) {
+                double engineVolume,
+                PassengerCapacity passengerCapacity) {
         super(brand, model, engineVolume);
+        this.passengerCapacity = passengerCapacity;
+    }
+
+    public PassengerCapacity getPassengerCapacity() {
+        return passengerCapacity;
+    }
+
+    public void setPassengerCapacity(PassengerCapacity passengerCapacity) {
+        this.passengerCapacity = passengerCapacity;
     }
 
     @Override
@@ -29,5 +41,14 @@ public class Bus extends Transport implements Competitive {
     @Override
     public void topSpeed() {
         System.out.println("Максимальная скорость: " + getEngineVolume() * 10 + "км/ч");
+    }
+
+    @Override
+    public void printType(){
+        if (passengerCapacity != null) {
+            System.out.println(passengerCapacity);
+        } else {
+            System.out.println("Данных по транспортному средству недостаточно!");
+        }
     }
 }
