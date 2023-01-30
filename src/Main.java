@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
    /* Для каждого вида авто (легковые, грузовые и автобусы) создайте по 4 объекта с произвольными параметрами.*/
@@ -31,6 +34,34 @@ public class Main {
         System.out.println(LoadCapacity.N2);
         System.out.println();
         System.out.println(PassengerCapacity.S);
+
+       /* List<Transport> list = new ArrayList<>();
+        list.add(renaultCar); list.add(ivecoTruck); list.add(kiaBus);
+        for (Transport transport : list) {
+            if (transport instanceof Car || transport instanceof Truck) {
+                transport.getDiagnostics();
+            } else {
+                throw new TransportTypeException("Автобусы не должны проходить диагностику!");
+            }
+        }*/
+
+        /*Transport[] transports = new Transport[] {ladaCar, kiaCar, ivecoTruck, daewooBus, nefazBus, scaniaBus};
+        for (Transport t : transports) {
+            try {
+                t.getDiagnostics();
+            } catch (TransportTypeException e) {
+                System.err.println(e.getMessage());
+            }
+        }*/
+
+        toyotaCar.getDiagnostics();
+        ivecoTruck.getDiagnostics();
+
+        try {
+            daewooBus.getDiagnostics();
+        } catch (TransportTypeException e) {
+            System.err.println(e.getMessage());
+        }
 
     }
 }

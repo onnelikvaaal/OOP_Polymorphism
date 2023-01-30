@@ -51,4 +51,10 @@ public class Car extends Transport implements Competitive {
             System.out.println("Данных по транспортному средству недостаточно!");
         }
     }
+
+    @Override
+    public void getDiagnostics() {
+        System.out.println("Автомобиль прошёл диагностику");
+    }
+
 }

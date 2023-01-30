@@ -51,4 +51,9 @@ public class Bus extends Transport implements Competitive {
             System.out.println("Данных по транспортному средству недостаточно!");
         }
     }
+
+    @Override
+    public void getDiagnostics() throws TransportTypeException {
+        throw new TransportTypeException("Автобусы не должны проходить диагностику!");
+    }
 }
