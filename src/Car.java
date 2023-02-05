@@ -1,12 +1,14 @@
+import java.util.List;
+
 public class Car extends Transport implements Competitive {
 
     private CarBody carBody;
 
     public Car(String brand,
                String model,
-               double engineVolume,
+               double engineVolume, List<Mechanic> mechanics,
                CarBody carBody) {
-        super(brand, model, engineVolume);
+        super(brand, model, engineVolume, mechanics);
         this.carBody = carBody;
     }
 

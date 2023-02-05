@@ -1,12 +1,14 @@
+import java.util.List;
+
 public class Truck extends Transport implements Competitive {
 
     private LoadCapacity loadCapacity;
 
     public Truck (String brand,
                   String model,
-                  double engineVolume,
+                  double engineVolume, List<Mechanic> mechanics,
                   LoadCapacity loadCapacity) {
-        super(brand, model, engineVolume);
+        super(brand, model, engineVolume, mechanics);
         this.loadCapacity = loadCapacity;
     }
 

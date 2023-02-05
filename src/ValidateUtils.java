@@ -15,4 +15,12 @@ public class ValidateUtils {
             return value;
         }
     }
+
+    public static String validateStringMechanicParameter(String value) {
+        if (value.isBlank() || value.isEmpty() || value == null) {
+            return "default";
+        } else {
+            return value;
+        }
+    }
 }

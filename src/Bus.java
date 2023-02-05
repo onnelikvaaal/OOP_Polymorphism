@@ -1,12 +1,14 @@
+import java.util.List;
+
 public class Bus extends Transport implements Competitive {
 
     private PassengerCapacity passengerCapacity;
 
     public Bus (String brand,
                 String model,
-                double engineVolume,
+                double engineVolume, List<Mechanic> mechanics,
                 PassengerCapacity passengerCapacity) {
-        super(brand, model, engineVolume);
+        super(brand, model, engineVolume, mechanics);
         this.passengerCapacity = passengerCapacity;
     }
 

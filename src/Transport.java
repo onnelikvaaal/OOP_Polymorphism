@@ -1,20 +1,19 @@
-public abstract class Transport {
+import java.util.ArrayList;
+import java.util.List;
 
-    /*В абстрактный класс  Transport
-    добавьте абстрактный метод printType, который выводит в консоль либо значение типа транспортного средства,
-    либо, если тип транспортного средства не указан,
-    строку вида «Данных по транспортному средству недостаточно».*/
+public abstract class Transport {
 
     private String brand;
     private String model;
     private double engineVolume;
 
-    public Transport(String brand,
-                     String model,
-                     double engineVolume) {
+    private List<Mechanic> mechanics = new ArrayList<>();
+
+    public Transport (String brand, String model, double engineVolume, List<Mechanic> mechanics) {
         this.brand = ValidateUtils.validateStringCarParameter(brand);
         this.model = ValidateUtils.validateStringCarParameter(model);
         this.engineVolume = ValidateUtils.validateDoubleCarParameter(engineVolume);
+        this.mechanics = mechanics;
     }
 
     public String getBrand() {
@@ -41,6 +40,14 @@ public abstract class Transport {
         this.engineVolume = engineVolume;
     }
 
+    public List<Mechanic> getMechanics() {
+        return mechanics;
+    }
+
+    public void setMechanics(List<Mechanic> mechanics) {
+        this.mechanics = mechanics;
+    }
+
     @Override
     public String toString() {
         return brand + " " + model + " " + engineVolume;
@@ -57,5 +64,14 @@ public abstract class Transport {
     public abstract void printType();
 
     public abstract void getDiagnostics() throws TransportTypeException;
+
+    public void getMechanicsInfo() {
+        for (Mechanic mechanic : mechanics) {
+            System.out.println("Механик: " + mechanic);
+        }
+    }
+
+
+
 
 }
