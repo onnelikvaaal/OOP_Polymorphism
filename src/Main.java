@@ -1,6 +1,5 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.io.IOException;
+import java.util.*;
 
 public class Main {
 
@@ -78,5 +77,33 @@ public class Main {
         station.service();
         station.service();
 
+       /* Map<String, Transport> platesMap = new HashMap<>();
+        platesMap.put("11111", kiaCar);
+        platesMap.put("22222", ladaCar);
+        platesMap.put("33333", kiaBus);
+
+        for (Map.Entry<String, Transport> entry : platesMap.entrySet()) {
+            if (entry.getValue().getBrand() == "Kia") {
+                System.out.println("It's Kia!!!!!11!");
+            }
+        }*/
+
+        Map<Transport, List<Mechanic>> myHashMap = new HashMap<>();
+        myHashMap.put(ladaCar, mechanicsList);
+        myHashMap.put(toyotaCar, mechanicsList);
+        myHashMap.put(kiaCar, mechanicsList);
+        myHashMap.put(renaultCar, mechanicsList);
+        myHashMap.put(ivecoTruck, mechanicsList);
+        myHashMap.put(kamazTruck, mechanicsList);
+        myHashMap.put(scaniaTruck, mechanicsList);
+        myHashMap.put(fordTruck, mechanicsList);
+        myHashMap.put(nefazBus, mechanicsList);
+        myHashMap.put(scaniaBus, mechanicsList);
+        myHashMap.put(daewooBus, mechanicsList);
+        myHashMap.put(kiaBus, mechanicsList);
+
+        for (Map.Entry<Transport, List<Mechanic>> entry : myHashMap.entrySet() ) {
+            System.out.println(entry);
+           }
     }
 }
