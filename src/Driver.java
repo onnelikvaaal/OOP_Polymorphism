@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Driver {
     /*Создайте общий класс «Водитель», который будет иметь следующие параметры:
 
@@ -61,5 +63,23 @@ public class Driver {
 
     public void refuel() {
         System.out.println("Refuel");
+    }
+
+    @Override
+    public String toString() {
+        return name + " " + hasDrivingLicense + " " + drivingExperience;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Driver driver = (Driver) o;
+        return hasDrivingLicense == driver.hasDrivingLicense && drivingExperience == driver.drivingExperience && Objects.equals(name, driver.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, hasDrivingLicense, drivingExperience);
     }
 }

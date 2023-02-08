@@ -77,18 +77,8 @@ public class Main {
         station.service();
         station.service();
 
-       /* Map<String, Transport> platesMap = new HashMap<>();
-        platesMap.put("11111", kiaCar);
-        platesMap.put("22222", ladaCar);
-        platesMap.put("33333", kiaBus);
 
-        for (Map.Entry<String, Transport> entry : platesMap.entrySet()) {
-            if (entry.getValue().getBrand() == "Kia") {
-                System.out.println("It's Kia!!!!!11!");
-            }
-        }*/
-
-        Map<Transport, List<Mechanic>> myHashMap = new HashMap<>();
+        /*Map<Transport, List<Mechanic>> myHashMap = new HashMap<>();
         myHashMap.put(ladaCar, mechanicsList);
         myHashMap.put(toyotaCar, mechanicsList);
         myHashMap.put(kiaCar, mechanicsList);
@@ -104,6 +94,20 @@ public class Main {
 
         for (Map.Entry<Transport, List<Mechanic>> entry : myHashMap.entrySet() ) {
             System.out.println(entry);
-           }
+           }*/
+
+        Set<Driver> driverSet = new HashSet<>();
+        driverSet.add(ivanov);
+        driverSet.add(petrov);
+        driverSet.add(sidorov);
+        System.out.println(driverSet);
+        System.out.println(driverSet.size());
+
+        Iterator<Driver> driverSetIterator = driverSet.iterator();
+        while (driverSetIterator.hasNext()) {
+            System.out.println(driverSetIterator.next());
+        }
+
+
     }
 }
